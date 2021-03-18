@@ -18,7 +18,7 @@ class TimestampMixin(object):
     created_at = Column(DateTime, default=func.now())
 
 
-class Platforms(TimestampMixin, Base):
+class Platform(TimestampMixin, Base):
     """
     Source platforms
     """
@@ -27,6 +27,7 @@ class Platforms(TimestampMixin, Base):
 
     id = Column(String, primary_key=True, default=str(uuid4()))
     name = Column(String)
+    __table_args__ = (UniqueConstraint("name", sqlite_on_conflict="IGNORE"),)
 
 
 class TextContent(TimestampMixin, Base):
@@ -78,3 +79,8 @@ class TextAuthor(TimestampMixin, Base):
 
     id = Column(String, primary_key=True, default=str(uuid4()))
     username = Column(String)
+    platform = Column(String, ForeignKey("platforms.id", ondelete="CASCADE"))
+
+    __table_args__ = (
+        UniqueConstraint("username", "platform", sqlite_on_conflict="IGNORE"),
+    )
