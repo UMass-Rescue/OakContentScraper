@@ -16,10 +16,23 @@ Classes
 
 
 
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.scrapers.twitter.get_all_keywords
+   content_scraper.scrapers.twitter.get_keywords_from_file
+
+
+.. function:: get_all_keywords()
+
+
+.. function:: get_keywords_from_file(directory, filename)
+
+
 .. class:: TwitterScrape
 
-
-   Bases: :class:`content_scraper.scrapers.Scrape`
 
    .. method:: collect_batch(self, keywords=get_all_keywords())
 

@@ -176,9 +176,6 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.scrapers.TwitterScrape" title="content_scraper.scrapers.TwitterScrape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TwitterScrape</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.scrapers.Scrape" title="content_scraper.scrapers.Scrape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scrape</span></code></a></p></td>
-<td><p>Helper class that provides a standard way to create an ABC using</p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -204,8 +201,7 @@
 <dl class="py class">
 <dt id="content_scraper.scrapers.TwitterScrape">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.scrapers.</span></code><code class="sig-name descname"><span class="pre">TwitterScrape</span></code><a class="headerlink" href="#content_scraper.scrapers.TwitterScrape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#content_scraper.scrapers.Scrape" title="content_scraper.scrapers.Scrape"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.scrapers.Scrape</span></code></a></p>
-<dl class="py method">
+<dd><dl class="py method">
 <dt id="content_scraper.scrapers.TwitterScrape.collect_batch">
 <code class="sig-name descname"><span class="pre">collect_batch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">get_all_keywords()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.TwitterScrape.collect_batch" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -218,29 +214,6 @@
 <dl class="py method">
 <dt id="content_scraper.scrapers.TwitterScrape.continuous_monitor">
 <code class="sig-name descname"><span class="pre">continuous_monitor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">get_all_keywords()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.TwitterScrape.continuous_monitor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="content_scraper.scrapers.Scrape">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.scrapers.</span></code><code class="sig-name descname"><span class="pre">Scrape</span></code><a class="headerlink" href="#content_scraper.scrapers.Scrape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
-<p>Helper class that provides a standard way to create an ABC using
-inheritance.</p>
-<dl class="py method">
-<dt id="content_scraper.scrapers.Scrape.collect_batch">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">collect_batch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.Scrape.collect_batch" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="content_scraper.scrapers.Scrape.batch_monitor">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">batch_monitor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.Scrape.batch_monitor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="content_scraper.scrapers.Scrape.continuous_monitor">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">continuous_monitor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.Scrape.continuous_monitor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

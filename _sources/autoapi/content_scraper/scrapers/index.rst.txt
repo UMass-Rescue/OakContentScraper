@@ -22,7 +22,6 @@ Classes
 .. autoapisummary::
 
    content_scraper.scrapers.TwitterScrape
-   content_scraper.scrapers.Scrape
 
 
 
@@ -39,8 +38,6 @@ Functions
 .. class:: TwitterScrape
 
 
-   Bases: :class:`content_scraper.scrapers.Scrape`
-
    .. method:: collect_batch(self, keywords=get_all_keywords())
 
 
@@ -48,26 +45,6 @@ Functions
 
 
    .. method:: continuous_monitor(self, keywords=get_all_keywords())
-
-
-
-.. class:: Scrape
-
-   Bases: :class:`abc.ABC`
-
-   Helper class that provides a standard way to create an ABC using
-   inheritance.
-
-   .. method:: collect_batch(self)
-      :abstractmethod:
-
-
-   .. method:: batch_monitor(self)
-      :abstractmethod:
-
-
-   .. method:: continuous_monitor(self)
-      :abstractmethod:
 
 
 
