@@ -165,14 +165,43 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.standards.TextContent" title="content_scraper.db.standards.TextContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextContent</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.standards.AppMetadata" title="content_scraper.db.standards.AppMetadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AppMetadata</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.standards.ScrapeResult" title="content_scraper.db.standards.ScrapeResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ScrapeResult</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.standards.TextContent" title="content_scraper.db.standards.TextContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextContent</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.standards.ScrapeResult" title="content_scraper.db.standards.ScrapeResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ScrapeResult</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt id="content_scraper.db.standards.AppMetadata">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.standards.</span></code><code class="sig-name descname"><span class="pre">AppMetadata</span></code><a class="headerlink" href="#content_scraper.db.standards.AppMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt id="content_scraper.db.standards.AppMetadata.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">:str</span></em><a class="headerlink" href="#content_scraper.db.standards.AppMetadata.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.standards.AppMetadata.publisher">
+<code class="sig-name descname"><span class="pre">publisher</span></code><em class="property"> <span class="pre">:str</span></em><a class="headerlink" href="#content_scraper.db.standards.AppMetadata.publisher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.standards.AppMetadata.esrb_rating">
+<code class="sig-name descname"><span class="pre">esrb_rating</span></code><em class="property"> <span class="pre">:str</span></em><a class="headerlink" href="#content_scraper.db.standards.AppMetadata.esrb_rating" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.standards.AppMetadata.publication_date">
+<code class="sig-name descname"><span class="pre">publication_date</span></code><em class="property"> <span class="pre">:datetime</span></em><a class="headerlink" href="#content_scraper.db.standards.AppMetadata.publication_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt id="content_scraper.db.standards.TextContent">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.standards.</span></code><code class="sig-name descname"><span class="pre">TextContent</span></code><a class="headerlink" href="#content_scraper.db.standards.TextContent" title="Permalink to this definition">¶</a></dt>
@@ -219,8 +248,8 @@
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.standards.</span></code><code class="sig-name descname"><span class="pre">ScrapeResult</span></code><a class="headerlink" href="#content_scraper.db.standards.ScrapeResult" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
 <dl class="py attribute">
-<dt id="content_scraper.db.standards.ScrapeResult.platform">
-<code class="sig-name descname"><span class="pre">platform</span></code><em class="property"> <span class="pre">:str</span></em><a class="headerlink" href="#content_scraper.db.standards.ScrapeResult.platform" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.standards.ScrapeResult.source_platform">
+<code class="sig-name descname"><span class="pre">source_platform</span></code><em class="property"> <span class="pre">:str</span></em><a class="headerlink" href="#content_scraper.db.standards.ScrapeResult.source_platform" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -231,6 +260,11 @@
 <dl class="py attribute">
 <dt id="content_scraper.db.standards.ScrapeResult.content_type">
 <code class="sig-name descname"><span class="pre">content_type</span></code><em class="property"> <span class="pre">:WrittenContentCategory</span></em><a class="headerlink" href="#content_scraper.db.standards.ScrapeResult.content_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.standards.ScrapeResult.app_target">
+<code class="sig-name descname"><span class="pre">app_target</span></code><em class="property"> <span class="pre">:Optional[str]</span></em><a class="headerlink" href="#content_scraper.db.standards.ScrapeResult.app_target" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

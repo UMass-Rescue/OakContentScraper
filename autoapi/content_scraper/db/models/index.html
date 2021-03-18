@@ -169,17 +169,26 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimestampMixin</span></code></a></p></td>
 <td><p>Provides auto generating created_at field</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.models.Platform" title="content_scraper.db.models.Platform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Platform</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.models.AppMetadata" title="content_scraper.db.models.AppMetadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AppMetadata</span></code></a></p></td>
+<td><p>Provides auto generating created_at field</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.models.AppTarget" title="content_scraper.db.models.AppTarget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AppTarget</span></code></a></p></td>
+<td><p>Provides auto generating created_at field</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.models.AppTextAssociation" title="content_scraper.db.models.AppTextAssociation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AppTextAssociation</span></code></a></p></td>
+<td><p>Provides auto generating created_at field</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.models.SourcePlatform" title="content_scraper.db.models.SourcePlatform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourcePlatform</span></code></a></p></td>
 <td><p>Source platforms</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.models.TextAuthor" title="content_scraper.db.models.TextAuthor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextAuthor</span></code></a></p></td>
+<td><p>Written Text Author</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.models.TextContent" title="content_scraper.db.models.TextContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextContent</span></code></a></p></td>
 <td><p>Written Text Content</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#content_scraper.db.models.TextMetadata" title="content_scraper.db.models.TextMetadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextMetadata</span></code></a></p></td>
 <td><p>Written Text Metadata</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#content_scraper.db.models.TextAuthor" title="content_scraper.db.models.TextAuthor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextAuthor</span></code></a></p></td>
-<td><p>Written Text Author</p></td>
 </tr>
 </tbody>
 </table>
@@ -201,28 +210,161 @@
 </dd></dl>
 
 <dl class="py class">
-<dt id="content_scraper.db.models.Platform">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">Platform</span></code><a class="headerlink" href="#content_scraper.db.models.Platform" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.models.AppMetadata">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">AppMetadata</span></code><a class="headerlink" href="#content_scraper.db.models.AppMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#content_scraper.db.models.Base" title="content_scraper.db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Provides auto generating created_at field</p>
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppMetadata.__tablename__">
+<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">app_metadatas</span></em><a class="headerlink" href="#content_scraper.db.models.AppMetadata.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppMetadata.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.AppMetadata.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppMetadata.publisher">
+<code class="sig-name descname"><span class="pre">publisher</span></code><a class="headerlink" href="#content_scraper.db.models.AppMetadata.publisher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppMetadata.esrb_rating">
+<code class="sig-name descname"><span class="pre">esrb_rating</span></code><a class="headerlink" href="#content_scraper.db.models.AppMetadata.esrb_rating" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppMetadata.publication_date">
+<code class="sig-name descname"><span class="pre">publication_date</span></code><a class="headerlink" href="#content_scraper.db.models.AppMetadata.publication_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppMetadata.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.AppMetadata.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="content_scraper.db.models.AppTarget">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">AppTarget</span></code><a class="headerlink" href="#content_scraper.db.models.AppTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#content_scraper.db.models.Base" title="content_scraper.db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Provides auto generating created_at field</p>
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTarget.__tablename__">
+<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">app_targets</span></em><a class="headerlink" href="#content_scraper.db.models.AppTarget.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTarget.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.AppTarget.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTarget.name">
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#content_scraper.db.models.AppTarget.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTarget.bundle_id">
+<code class="sig-name descname"><span class="pre">bundle_id</span></code><a class="headerlink" href="#content_scraper.db.models.AppTarget.bundle_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTarget.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.AppTarget.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="content_scraper.db.models.AppTextAssociation">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">AppTextAssociation</span></code><a class="headerlink" href="#content_scraper.db.models.AppTextAssociation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#content_scraper.db.models.Base" title="content_scraper.db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Provides auto generating created_at field</p>
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTextAssociation.__tablename__">
+<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">app_text_associations</span></em><a class="headerlink" href="#content_scraper.db.models.AppTextAssociation.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTextAssociation.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.AppTextAssociation.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTextAssociation.text_id">
+<code class="sig-name descname"><span class="pre">text_id</span></code><a class="headerlink" href="#content_scraper.db.models.AppTextAssociation.text_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTextAssociation.app_id">
+<code class="sig-name descname"><span class="pre">app_id</span></code><a class="headerlink" href="#content_scraper.db.models.AppTextAssociation.app_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.AppTextAssociation.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.AppTextAssociation.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="content_scraper.db.models.SourcePlatform">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">SourcePlatform</span></code><a class="headerlink" href="#content_scraper.db.models.SourcePlatform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#content_scraper.db.models.Base" title="content_scraper.db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <p>Source platforms</p>
 <dl class="py attribute">
-<dt id="content_scraper.db.models.Platform.__tablename__">
-<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">platforms</span></em><a class="headerlink" href="#content_scraper.db.models.Platform.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.models.SourcePlatform.__tablename__">
+<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">source_platforms</span></em><a class="headerlink" href="#content_scraper.db.models.SourcePlatform.__tablename__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="content_scraper.db.models.Platform.id">
-<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.Platform.id" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.models.SourcePlatform.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.SourcePlatform.id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="content_scraper.db.models.Platform.name">
-<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#content_scraper.db.models.Platform.name" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.models.SourcePlatform.name">
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#content_scraper.db.models.SourcePlatform.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="content_scraper.db.models.Platform.__table_args__">
-<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.Platform.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.models.SourcePlatform.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.SourcePlatform.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="content_scraper.db.models.TextAuthor">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">TextAuthor</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#content_scraper.db.models.Base" title="content_scraper.db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Written Text Author</p>
+<dl class="py attribute">
+<dt id="content_scraper.db.models.TextAuthor.__tablename__">
+<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">text_authors</span></em><a class="headerlink" href="#content_scraper.db.models.TextAuthor.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.TextAuthor.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.TextAuthor.username">
+<code class="sig-name descname"><span class="pre">username</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.TextAuthor.source_platform">
+<code class="sig-name descname"><span class="pre">source_platform</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.source_platform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="content_scraper.db.models.TextAuthor.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.__table_args__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -280,8 +422,8 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="content_scraper.db.models.TextMetadata.platform">
-<code class="sig-name descname"><span class="pre">platform</span></code><a class="headerlink" href="#content_scraper.db.models.TextMetadata.platform" title="Permalink to this definition">¶</a></dt>
+<dt id="content_scraper.db.models.TextMetadata.source_platform">
+<code class="sig-name descname"><span class="pre">source_platform</span></code><a class="headerlink" href="#content_scraper.db.models.TextMetadata.source_platform" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -312,38 +454,6 @@
 <dl class="py attribute">
 <dt id="content_scraper.db.models.TextMetadata.__table_args__">
 <code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.TextMetadata.__table_args__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="content_scraper.db.models.TextAuthor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">content_scraper.db.models.</span></code><code class="sig-name descname"><span class="pre">TextAuthor</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#content_scraper.db.models.TimestampMixin" title="content_scraper.db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">content_scraper.db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#content_scraper.db.models.Base" title="content_scraper.db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
-<p>Written Text Author</p>
-<dl class="py attribute">
-<dt id="content_scraper.db.models.TextAuthor.__tablename__">
-<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">text_authors</span></em><a class="headerlink" href="#content_scraper.db.models.TextAuthor.__tablename__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="content_scraper.db.models.TextAuthor.id">
-<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="content_scraper.db.models.TextAuthor.username">
-<code class="sig-name descname"><span class="pre">username</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.username" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="content_scraper.db.models.TextAuthor.platform">
-<code class="sig-name descname"><span class="pre">platform</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.platform" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="content_scraper.db.models.TextAuthor.__table_args__">
-<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#content_scraper.db.models.TextAuthor.__table_args__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

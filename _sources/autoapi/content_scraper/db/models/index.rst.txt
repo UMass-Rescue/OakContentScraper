@@ -18,10 +18,13 @@ Classes
 .. autoapisummary::
 
    content_scraper.db.models.TimestampMixin
-   content_scraper.db.models.Platform
+   content_scraper.db.models.AppMetadata
+   content_scraper.db.models.AppTarget
+   content_scraper.db.models.AppTextAssociation
+   content_scraper.db.models.SourcePlatform
+   content_scraper.db.models.TextAuthor
    content_scraper.db.models.TextContent
    content_scraper.db.models.TextMetadata
-   content_scraper.db.models.TextAuthor
 
 
 
@@ -42,14 +45,51 @@ Classes
       
 
 
-.. class:: Platform
+.. class:: AppMetadata
 
    Bases: :class:`content_scraper.db.models.TimestampMixin`, :class:`Base`
 
-   Source platforms
+   Provides auto generating created_at field
 
    .. attribute:: __tablename__
-      :annotation: = platforms
+      :annotation: = app_metadatas
+
+      
+
+   .. attribute:: id
+      
+
+      
+
+   .. attribute:: publisher
+      
+
+      
+
+   .. attribute:: esrb_rating
+      
+
+      
+
+   .. attribute:: publication_date
+      
+
+      
+
+   .. attribute:: __table_args__
+      
+
+      
+
+
+.. class:: AppTarget
+
+   Bases: :class:`content_scraper.db.models.TimestampMixin`, :class:`Base`
+
+   Provides auto generating created_at field
+
+   .. attribute:: __tablename__
+      :annotation: = app_targets
 
       
 
@@ -59,6 +99,102 @@ Classes
       
 
    .. attribute:: name
+      
+
+      
+
+   .. attribute:: bundle_id
+      
+
+      
+
+   .. attribute:: __table_args__
+      
+
+      
+
+
+.. class:: AppTextAssociation
+
+   Bases: :class:`content_scraper.db.models.TimestampMixin`, :class:`Base`
+
+   Provides auto generating created_at field
+
+   .. attribute:: __tablename__
+      :annotation: = app_text_associations
+
+      
+
+   .. attribute:: id
+      
+
+      
+
+   .. attribute:: text_id
+      
+
+      
+
+   .. attribute:: app_id
+      
+
+      
+
+   .. attribute:: __table_args__
+      
+
+      
+
+
+.. class:: SourcePlatform
+
+   Bases: :class:`content_scraper.db.models.TimestampMixin`, :class:`Base`
+
+   Source platforms
+
+   .. attribute:: __tablename__
+      :annotation: = source_platforms
+
+      
+
+   .. attribute:: id
+      
+
+      
+
+   .. attribute:: name
+      
+
+      
+
+   .. attribute:: __table_args__
+      
+
+      
+
+
+.. class:: TextAuthor
+
+   Bases: :class:`content_scraper.db.models.TimestampMixin`, :class:`Base`
+
+   Written Text Author
+
+   .. attribute:: __tablename__
+      :annotation: = text_authors
+
+      
+
+   .. attribute:: id
+      
+
+      
+
+   .. attribute:: username
+      
+
+      
+
+   .. attribute:: source_platform
       
 
       
@@ -122,7 +258,7 @@ Classes
 
       
 
-   .. attribute:: platform
+   .. attribute:: source_platform
       
 
       
@@ -148,38 +284,6 @@ Classes
       
 
    .. attribute:: miscellanous
-      
-
-      
-
-   .. attribute:: __table_args__
-      
-
-      
-
-
-.. class:: TextAuthor
-
-   Bases: :class:`content_scraper.db.models.TimestampMixin`, :class:`Base`
-
-   Written Text Author
-
-   .. attribute:: __tablename__
-      :annotation: = text_authors
-
-      
-
-   .. attribute:: id
-      
-
-      
-
-   .. attribute:: username
-      
-
-      
-
-   .. attribute:: platform
       
 
       

@@ -12,9 +12,35 @@ Classes
 
 .. autoapisummary::
 
+   content_scraper.db.standards.AppMetadata
    content_scraper.db.standards.TextContent
    content_scraper.db.standards.ScrapeResult
 
+
+
+.. class:: AppMetadata
+
+   Bases: :class:`pydantic.BaseModel`
+
+   .. attribute:: name
+      :annotation: :str
+
+      
+
+   .. attribute:: publisher
+      :annotation: :str
+
+      
+
+   .. attribute:: esrb_rating
+      :annotation: :str
+
+      
+
+   .. attribute:: publication_date
+      :annotation: :datetime
+
+      
 
 
 .. class:: TextContent
@@ -61,7 +87,7 @@ Classes
 
    Bases: :class:`pydantic.BaseModel`
 
-   .. attribute:: platform
+   .. attribute:: source_platform
       :annotation: :str
 
       
@@ -73,6 +99,11 @@ Classes
 
    .. attribute:: content_type
       :annotation: :WrittenContentCategory
+
+      
+
+   .. attribute:: app_target
+      :annotation: :Optional[str]
 
       
 
