@@ -1,6 +1,6 @@
 from typing import List
 from pydantic import BaseModel
-from content_scraper.db.util import WrittenContentCategory
+from content_scraper.db.strings import WrittenContentCategory
 from datetime import datetime
 
 

@@ -4,3 +4,4 @@ twint @ git+https://github.com/twintproject/twint.git@e7c8a0c764f6879188e5c21e25
 pytest
 pydantic
 typing
+loguru

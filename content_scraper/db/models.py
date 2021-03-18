@@ -5,7 +5,7 @@ from sqlalchemy import Column, ForeignKey, String, UniqueConstraint, Enum
 from sqlalchemy.types import DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
-from content_scraper.db.util import WrittenContentCategory
+from content_scraper.db.strings import WrittenContentCategory
 from uuid import uuid4
 
 
