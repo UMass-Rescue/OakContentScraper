@@ -1,0 +1,17 @@
+:mod:`content_scraper.pipelines`
+================================
+
+.. py:module:: content_scraper.pipelines
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   continuous/index.rst
+   interval/index.rst
+   single/index.rst
+
+

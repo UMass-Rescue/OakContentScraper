@@ -1,0 +1,82 @@
+:mod:`content_scraper.scrapers`
+===============================
+
+.. py:module:: content_scraper.scrapers
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   twitter/index.rst
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.scrapers.TwitterScrape
+   content_scraper.scrapers.Scrape
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.scrapers.get_scraper
+   content_scraper.scrapers.get_all_keywords
+   content_scraper.scrapers.get_keywords_from_file
+
+
+.. class:: TwitterScrape
+
+
+   Bases: :class:`content_scraper.scrapers.Scrape`
+
+   .. method:: collect_batch(self, keywords=get_all_keywords())
+
+
+   .. method:: batch_monitor(self, keywords=get_all_keywords())
+
+
+   .. method:: continuous_monitor(self, keywords=get_all_keywords())
+
+
+
+.. class:: Scrape
+
+   Bases: :class:`abc.ABC`
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+   .. method:: collect_batch(self)
+      :abstractmethod:
+
+
+   .. method:: batch_monitor(self)
+      :abstractmethod:
+
+
+   .. method:: continuous_monitor(self)
+      :abstractmethod:
+
+
+
+.. function:: get_scraper(platform_string)
+
+
+.. function:: get_all_keywords()
+
+
+.. function:: get_keywords_from_file(directory, filename)
+
+

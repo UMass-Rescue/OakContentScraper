@@ -1,0 +1,28 @@
+:mod:`content_scraper.db.process`
+=================================
+
+.. py:module:: content_scraper.db.process
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.db.process.persist_scrape_result
+
+
+.. function:: persist_scrape_result(scrape_result, session=db.get_session())
+
+   Short summary.
+
+   :param ScrapeResult scrape_result: pydantic scrape result model
+   :param Session session: sqlalchemy session
+   :return: True if success
+   :rtype: boolean
+
+

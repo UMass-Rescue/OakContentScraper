@@ -1,0 +1,79 @@
+:mod:`content_scraper.db.standards`
+===================================
+
+.. py:module:: content_scraper.db.standards
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.db.standards.TextContent
+   content_scraper.db.standards.ScrapeResult
+
+
+
+.. class:: TextContent
+
+   Bases: :class:`pydantic.BaseModel`
+
+   .. attribute:: content
+      :annotation: :str
+
+      
+
+   .. attribute:: author_username
+      :annotation: :str
+
+      
+
+   .. attribute:: conversation_native_id
+      :annotation: :str
+
+      
+
+   .. attribute:: publication_date
+      :annotation: :datetime
+
+      
+
+   .. attribute:: publically_available
+      :annotation: :bool
+
+      
+
+   .. attribute:: keywords
+      :annotation: :List[str]
+
+      
+
+   .. attribute:: miscellanous
+      :annotation: :str
+
+      
+
+
+.. class:: ScrapeResult
+
+   Bases: :class:`pydantic.BaseModel`
+
+   .. attribute:: platform
+      :annotation: :str
+
+      
+
+   .. attribute:: contents
+      :annotation: :List[TextContent]
+
+      
+
+   .. attribute:: content_type
+      :annotation: :WrittenContentCategory
+
+      
+
+

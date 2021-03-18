@@ -1,0 +1,14 @@
+:mod:`content_scraper.content_scraper_cli`
+==========================================
+
+.. py:module:: content_scraper.content_scraper_cli
+
+
+Module Contents
+---------------
+
+.. data:: parser
+   
+
+   
+

@@ -1,0 +1,33 @@
+:mod:`content_scraper.scrapers.twitter`
+=======================================
+
+.. py:module:: content_scraper.scrapers.twitter
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.scrapers.twitter.TwitterScrape
+
+
+
+.. class:: TwitterScrape
+
+
+   Bases: :class:`content_scraper.scrapers.Scrape`
+
+   .. method:: collect_batch(self, keywords=get_all_keywords())
+
+
+   .. method:: batch_monitor(self, keywords=get_all_keywords())
+
+
+   .. method:: continuous_monitor(self, keywords=get_all_keywords())
+
+
+

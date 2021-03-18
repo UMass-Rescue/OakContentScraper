@@ -1,0 +1,21 @@
+:mod:`content_scraper.pipelines.single`
+=======================================
+
+.. py:module:: content_scraper.pipelines.single
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.pipelines.single.batch_collect_single_platform
+
+
+.. function:: batch_collect_single_platform(platform)
+
+

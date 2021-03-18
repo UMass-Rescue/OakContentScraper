@@ -1,0 +1,45 @@
+:mod:`content_scraper.db.strings`
+=================================
+
+.. py:module:: content_scraper.db.strings
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.db.strings.WrittenContentCategory
+
+
+
+.. class:: WrittenContentCategory
+
+   Bases: :class:`enum.Enum`
+
+   Possible sources for written content
+
+   .. attribute:: direct_message
+      :annotation: = direct_message
+
+      
+
+   .. attribute:: tweet
+      :annotation: = tweet
+
+      
+
+   .. attribute:: review
+      :annotation: = review
+
+      
+
+   .. attribute:: wall_post
+      :annotation: = wall_post
+
+      
+
+

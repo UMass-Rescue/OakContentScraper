@@ -1,0 +1,41 @@
+:mod:`content_scraper`
+======================
+
+.. py:module:: content_scraper
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   db/index.rst
+   pipelines/index.rst
+   scrapers/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   content_scraper_cli/index.rst
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.setup_logging
+
+
+.. function:: setup_logging()
+
+

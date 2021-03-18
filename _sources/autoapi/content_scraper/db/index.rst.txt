@@ -1,0 +1,109 @@
+:mod:`content_scraper.db`
+=========================
+
+.. py:module:: content_scraper.db
+
+.. autoapi-nested-parse::
+
+   This module instantiates the models in the models.py file
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   models/index.rst
+   process/index.rst
+   standards/index.rst
+   strings/index.rst
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.db.create_db
+   content_scraper.db.get_session
+   content_scraper.db.drop_all
+   content_scraper.db.delete_db
+   content_scraper.db.wipe
+   content_scraper.db.set_sqlite_pragma
+
+
+.. data:: Base
+   
+
+   
+
+.. data:: database
+   
+
+   
+
+.. data:: folder_path
+   
+
+   
+
+.. data:: version
+   
+
+   
+
+.. data:: sqlite_path
+   
+
+   
+
+.. data:: engine
+   
+
+   
+
+.. function:: create_db()
+
+   Initialize db with an engine
+
+
+.. function:: get_session()
+
+   Returns a new session object the current engine
+
+   :return: sqlalchemy Session
+   :rtype: session
+
+
+.. function:: drop_all()
+
+   Drop all tables in db
+
+   :return: True if success
+   :rtype: bool
+
+
+.. function:: delete_db()
+
+   Delete db construct (sqlite file)
+
+   :return: True if success
+   :rtype: bool
+
+
+.. function:: wipe()
+
+   Drop all tables and delete file
+
+
+.. function:: set_sqlite_pragma(dbapi_connection, connection_record)
+
+   Ensures foreign key
+
+
