@@ -18,16 +18,71 @@ class TimestampMixin(object):
     created_at = Column(DateTime, default=func.now())
 
 
-class Platform(TimestampMixin, Base):
+class AppMetadata(TimestampMixin, Base):
+    __tablename__ = "app_metadatas"
+
+    id = Column(
+        String,
+        ForeignKey("app_targets.name", ondelete="CASCADE"),
+        primary_key=True,
+    )
+    publisher = Column(String)
+    esrb_rating = Column(String)
+    publication_date = Column(DateTime)
+
+    __table_args__ = (UniqueConstraint("id", sqlite_on_conflict="IGNORE"),)
+
+
+class AppTarget(TimestampMixin, Base):
+    __tablename__ = "app_targets"
+
+    id = Column(String, primary_key=True, default=str(uuid4()))
+    name = Column(String)
+    bundle_id = Column(String)
+    __table_args__ = (UniqueConstraint("name", sqlite_on_conflict="IGNORE"),)
+
+
+class AppTextAssociation(TimestampMixin, Base):
+    __tablename__ = "app_text_associations"
+
+    id = Column(String, primary_key=True, default=str(uuid4()))
+    text_id = Column(
+        String, ForeignKey("text_contents.id", ondelete="CASCADE"), index=True
+    )
+    app_id = Column(String, ForeignKey("app_targets.id", ondelete="CASCADE"))
+    __table_args__ = (
+        UniqueConstraint("text_id", "app_id", sqlite_on_conflict="IGNORE"),
+    )
+
+
+class SourcePlatform(TimestampMixin, Base):
     """
     Source platforms
     """
 
-    __tablename__ = "platforms"
+    __tablename__ = "source_platforms"
 
     id = Column(String, primary_key=True, default=str(uuid4()))
     name = Column(String)
     __table_args__ = (UniqueConstraint("name", sqlite_on_conflict="IGNORE"),)
+
+
+class TextAuthor(TimestampMixin, Base):
+    """
+    Written Text Author
+    """
+
+    __tablename__ = "text_authors"
+
+    id = Column(String, primary_key=True, default=str(uuid4()))
+    username = Column(String)
+    source_platform = Column(
+        String, ForeignKey("source_platforms.id", ondelete="CASCADE")
+    )
+
+    __table_args__ = (
+        UniqueConstraint("username", "source_platform", sqlite_on_conflict="IGNORE"),
+    )
 
 
 class TextContent(TimestampMixin, Base):
@@ -59,8 +114,8 @@ class TextMetadata(TimestampMixin, Base):
     author = Column(
         String, ForeignKey("text_authors.id", ondelete="CASCADE"), index=True
     )
-    platform = Column(
-        String, ForeignKey("platforms.id", ondelete="CASCADE"), index=True
+    source_platform = Column(
+        String, ForeignKey("source_platforms.id", ondelete="CASCADE"), index=True
     )
     converation_native_id = Column(String)
     publication_date = Column(DateTime)
@@ -68,19 +123,3 @@ class TextMetadata(TimestampMixin, Base):
     keywords = Column(String)
     miscellanous = Column(String)
     __table_args__ = (UniqueConstraint("id", sqlite_on_conflict="IGNORE"),)
-
-
-class TextAuthor(TimestampMixin, Base):
-    """
-    Written Text Author
-    """
-
-    __tablename__ = "text_authors"
-
-    id = Column(String, primary_key=True, default=str(uuid4()))
-    username = Column(String)
-    platform = Column(String, ForeignKey("platforms.id", ondelete="CASCADE"))
-
-    __table_args__ = (
-        UniqueConstraint("username", "platform", sqlite_on_conflict="IGNORE"),
-    )

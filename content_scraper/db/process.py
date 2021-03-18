@@ -11,7 +11,7 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
     :return: True if success
     :rtype: boolean
     """
-    platform = models.Platform(name=scrape_result.platform)
+    platform = models.SourcePlatform(name=scrape_result.source_platform)
     session.add(platform)
     session.flush()
     logger.info(platform.id)

@@ -49,7 +49,7 @@ class TwitterScrape:
         )
 
         result = ScrapeResult(
-            platform="twitter",
+            source_platform="twitter",
             contents=[sample_text],
             content_type=WrittenContentCategory.tweet,
         )

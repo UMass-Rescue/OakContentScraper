@@ -7,4 +7,4 @@ def test_record_exists():
 
     single.batch_collect_single_platform("twitter")
     session = db.get_session()
-    assert len(session.query(models.Platform).all()) == 1
+    assert len(session.query(models.SourcePlatform).all()) == 1
