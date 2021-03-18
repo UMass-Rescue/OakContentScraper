@@ -16,6 +16,7 @@ Submodules
    :maxdepth: 1
 
    models/index.rst
+   standards/index.rst
    util/index.rst
 
 
