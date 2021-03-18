@@ -169,7 +169,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#db.models.TimestampMixin" title="db.models.TimestampMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimestampMixin</span></code></a></p></td>
 <td><p>Provides auto generating created_at field</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#db.models.Platforms" title="db.models.Platforms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Platforms</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#db.models.Platform" title="db.models.Platform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Platform</span></code></a></p></td>
 <td><p>Source platforms</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#db.models.TextContent" title="db.models.TextContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextContent</span></code></a></p></td>
@@ -201,23 +201,28 @@
 </dd></dl>
 
 <dl class="py class">
-<dt id="db.models.Platforms">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">db.models.</span></code><code class="sig-name descname"><span class="pre">Platforms</span></code><a class="headerlink" href="#db.models.Platforms" title="Permalink to this definition">¶</a></dt>
+<dt id="db.models.Platform">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">db.models.</span></code><code class="sig-name descname"><span class="pre">Platform</span></code><a class="headerlink" href="#db.models.Platform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#db.models.TimestampMixin" title="db.models.TimestampMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">db.models.TimestampMixin</span></code></a>, <a class="reference internal" href="#db.models.Base" title="db.models.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <p>Source platforms</p>
 <dl class="py attribute">
-<dt id="db.models.Platforms.__tablename__">
-<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">platforms</span></em><a class="headerlink" href="#db.models.Platforms.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dt id="db.models.Platform.__tablename__">
+<code class="sig-name descname"><span class="pre">__tablename__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">platforms</span></em><a class="headerlink" href="#db.models.Platform.__tablename__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="db.models.Platforms.id">
-<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#db.models.Platforms.id" title="Permalink to this definition">¶</a></dt>
+<dt id="db.models.Platform.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#db.models.Platform.id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="db.models.Platforms.name">
-<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#db.models.Platforms.name" title="Permalink to this definition">¶</a></dt>
+<dt id="db.models.Platform.name">
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#db.models.Platform.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="db.models.Platform.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#db.models.Platform.__table_args__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -329,6 +334,16 @@
 <dl class="py attribute">
 <dt id="db.models.TextAuthor.username">
 <code class="sig-name descname"><span class="pre">username</span></code><a class="headerlink" href="#db.models.TextAuthor.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="db.models.TextAuthor.platform">
+<code class="sig-name descname"><span class="pre">platform</span></code><a class="headerlink" href="#db.models.TextAuthor.platform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="db.models.TextAuthor.__table_args__">
+<code class="sig-name descname"><span class="pre">__table_args__</span></code><a class="headerlink" href="#db.models.TextAuthor.__table_args__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
