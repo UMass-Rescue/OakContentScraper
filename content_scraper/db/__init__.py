@@ -7,86 +7,68 @@ from sqlalchemy.engine import Engine
 from sqlalchemy import event
 import sqlite3
 import os
-
 from content_scraper.db import models
 
+Base = models.Base
 
-class DBManager:
-    Base = models.Base
+database = os.getenv("DATABASE_NAME", default="content_scraper")
+folder_path = os.getenv("DATABASE_FOLDER", default="./")
+version = os.getenv("DATABASE_VERSION", default="0.1.0")
+sqlite_path = f"{os.path.join(folder_path,f'{database}_{version}')}.sqlite3"
+engine = create_engine(
+    f"sqlite:///{sqlite_path}",
+    connect_args={"check_same_thread": False},
+)
 
-    def __init__(
-        self,
-        database=os.getenv("DATABASE_NAME", default="content_scraper"),
-        folder_path=os.getenv("DATABASE_FOLDER", default="./"),
-        version=os.getenv("DATABASE_VERSION", default="0.1.0"),
-    ):
-        """Initalizes dbm object which can provide sessions
 
-        :param str database: name of the database
-        :param str folder_path: output folder
-        :param str version: version string
+def create_db():
+    """Initialize db with an engine"""
+    if folder_path != "" and not os.path.exists(folder_path):
+        os.makedirs(folder_path)
 
-        """
-        self.database = database
-        self.folder_path = folder_path
-        self.version = version
+    Base.metadata.create_all(engine)
 
-        self.create_db()
 
-    def create_db(self):
-        """Initialize db with an engine"""
-        if self.folder_path != "" and not os.path.exists(self.folder_path):
-            os.makedirs(self.folder_path)
-        self.sqlite_path = f"{os.path.join(self.folder_path,f'{self.database}_{self.version}')}.sqlite3"
-        self.engine = self.create_engine()
-        self.Base.metadata.create_all(self.engine)
+create_db()
 
-    def create_engine(self):
-        """Creates a new engine connecting to the db
 
-        :return: sqlalchemy Engine object
-        :rtype: Engine
+def get_session():
+    """Returns a new session object the current engine
 
-        """
-        return create_engine(
-            f"sqlite:///{self.sqlite_path}",
-            connect_args={"check_same_thread": False},
-        )
+    :return: sqlalchemy Session
+    :rtype: session
 
-    def get_session(self):
-        """Returns a new session object the current engine
+    """
+    Session = sessionmaker(bind=engine)
+    return Session()
 
-        :return: sqlalchemy Session
-        :rtype: session
 
-        """
-        Session = sessionmaker(bind=self.engine)
-        return Session()
+def drop_all():
+    """Drop all tables in db
 
-    def drop_all(self):
-        """Drop all tables in db
+    :return: True if success
+    :rtype: bool
 
-        :return: True if success
-        :rtype: bool
+    """
+    Base.metadata.drop_all(engine)
+    return True
 
-        """
-        self.Base.metadata.drop_all(self.engine)
-        return True
 
-    def delete_db(self):
-        """Delete db construct (sqlite file)
+def delete_db():
+    """Delete db construct (sqlite file)
 
-        :return: True if success
-        :rtype: bool
+    :return: True if success
+    :rtype: bool
 
-        """
-        os.remove(self.sqlite_path)
-        return True
+    """
+    os.remove(sqlite_path)
+    return True
 
-    def wipe(self):
-        """Drop all tables and delete file"""
-        self.Base.metadata.drop_all(bind=self.engine)
-        self.Base.metadata.create_all(bind=self.engine)
+
+def wipe():
+    """Drop all tables and delete file"""
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
 
 
 @event.listens_for(Engine, "connect")
