@@ -6,12 +6,15 @@ from sqlalchemy.types import DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
 from content_scraper.db.util import WrittenContentCategory
+from uuid import uuid4
 
 
 Base = declarative_base()
 
 
 class TimestampMixin(object):
+    """Provides auto generating created_at field"""
+
     created_at = Column(DateTime, default=func.now())
 
 
@@ -22,7 +25,7 @@ class Platforms(TimestampMixin, Base):
 
     __tablename__ = "platforms"
 
-    id = Column(String, primary_key=True)
+    id = Column(String, primary_key=True, default=str(uuid4()))
     name = Column(String)
 
 
@@ -33,7 +36,7 @@ class TextContent(TimestampMixin, Base):
 
     __tablename__ = "text_contents"
 
-    id = Column(String, primary_key=True)
+    id = Column(String, primary_key=True, default=str(uuid4()))
     content = Column(String)
     __table_args__ = (UniqueConstraint("id", sqlite_on_conflict="IGNORE"),)
 
@@ -49,6 +52,7 @@ class TextMetadata(TimestampMixin, Base):
         String,
         ForeignKey("text_contents.id", ondelete="CASCADE"),
         primary_key=True,
+        default=str(uuid4()),
     )
     content_type = Column(Enum(WrittenContentCategory))
     author = Column(
@@ -72,5 +76,5 @@ class TextAuthor(TimestampMixin, Base):
 
     __tablename__ = "text_authors"
 
-    id = Column(String, primary_key=True)
+    id = Column(String, primary_key=True, default=str(uuid4()))
     username = Column(String)

@@ -20,6 +20,13 @@ class DBManager:
         folder_path=os.getenv("DATABASE_FOLDER", default="./"),
         version=os.getenv("DATABASE_VERSION", default="0.1.0"),
     ):
+        """Initalizes dbm object which can provide sessions
+
+        :param str database: name of the database
+        :param str folder_path: output folder
+        :param str version: version string
+
+        """
         self.database = database
         self.folder_path = folder_path
         self.version = version
@@ -84,6 +91,7 @@ class DBManager:
 
 @event.listens_for(Engine, "connect")
 def set_sqlite_pragma(dbapi_connection, connection_record):
+    """Ensures foreign key"""
     if isinstance(dbapi_connection, sqlite3.Connection):
         cursor = dbapi_connection.cursor()
         cursor.execute("PRAGMA foreign_keys=ON")
