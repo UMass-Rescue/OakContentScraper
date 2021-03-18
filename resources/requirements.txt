@@ -1,0 +1,3 @@
+python-dotenv
+sqlalchemy
+twint @ git+https://github.com/twintproject/twint.git@e7c8a0c764f6879188e5c21e25fb6f1f856a7221
