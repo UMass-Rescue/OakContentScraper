@@ -1,0 +1,97 @@
+:mod:`db`
+=========
+
+.. py:module:: db
+
+.. autoapi-nested-parse::
+
+   This module instantiates the models in the models.py file
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   models/index.rst
+   util/index.rst
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   db.DBManager
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   db.set_sqlite_pragma
+
+
+.. class:: DBManager(database=os.getenv('DATABASE_NAME', default='content_scraper'), folder_path=os.getenv('DATABASE_FOLDER', default='./'), version=os.getenv('DATABASE_VERSION', default='0.1.0'))
+
+
+   .. attribute:: Base
+      
+
+      
+
+   .. method:: create_db(self)
+
+      Initialize db with an engine
+
+
+   .. method:: create_engine(self)
+
+      Creates a new engine connecting to the db
+
+      :return: sqlalchemy Engine object
+      :rtype: Engine
+
+
+   .. method:: get_session(self)
+
+      Returns a new session object the current engine
+
+      :return: sqlalchemy Session
+      :rtype: session
+
+
+   .. method:: drop_all(self)
+
+      Drop all tables in db
+
+      :return: True if success
+      :rtype: bool
+
+
+   .. method:: delete_db(self)
+
+      Delete db construct (sqlite file)
+
+      :return: True if success
+      :rtype: bool
+
+
+   .. method:: wipe(self)
+
+      Drop all tables and delete file
+
+
+
+.. function:: set_sqlite_pragma(dbapi_connection, connection_record)
+
+   Ensures foreign key
+
+
