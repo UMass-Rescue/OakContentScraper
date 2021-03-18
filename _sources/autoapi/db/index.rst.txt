@@ -23,72 +23,82 @@ Submodules
 Package Contents
 ----------------
 
-Classes
-~~~~~~~
-
-.. autoapisummary::
-
-   db.DBManager
-
-
 
 Functions
 ~~~~~~~~~
 
 .. autoapisummary::
 
+   db.create_db
+   db.get_session
+   db.drop_all
+   db.delete_db
+   db.wipe
    db.set_sqlite_pragma
 
 
-.. class:: DBManager(database=os.getenv('DATABASE_NAME', default='content_scraper'), folder_path=os.getenv('DATABASE_FOLDER', default='./'), version=os.getenv('DATABASE_VERSION', default='0.1.0'))
+.. data:: Base
+   
+
+   
+
+.. data:: database
+   
+
+   
+
+.. data:: folder_path
+   
+
+   
+
+.. data:: version
+   
+
+   
+
+.. data:: sqlite_path
+   
+
+   
+
+.. data:: engine
+   
+
+   
+
+.. function:: create_db()
+
+   Initialize db with an engine
 
 
-   .. attribute:: Base
-      
+.. function:: get_session()
 
-      
+   Returns a new session object the current engine
 
-   .. method:: create_db(self)
-
-      Initialize db with an engine
+   :return: sqlalchemy Session
+   :rtype: session
 
 
-   .. method:: create_engine(self)
+.. function:: drop_all()
 
-      Creates a new engine connecting to the db
+   Drop all tables in db
 
-      :return: sqlalchemy Engine object
-      :rtype: Engine
-
-
-   .. method:: get_session(self)
-
-      Returns a new session object the current engine
-
-      :return: sqlalchemy Session
-      :rtype: session
+   :return: True if success
+   :rtype: bool
 
 
-   .. method:: drop_all(self)
+.. function:: delete_db()
 
-      Drop all tables in db
+   Delete db construct (sqlite file)
 
-      :return: True if success
-      :rtype: bool
-
-
-   .. method:: delete_db(self)
-
-      Delete db construct (sqlite file)
-
-      :return: True if success
-      :rtype: bool
+   :return: True if success
+   :rtype: bool
 
 
-   .. method:: wipe(self)
+.. function:: wipe()
 
-      Drop all tables and delete file
-
+   Drop all tables and delete file
 
 
 .. function:: set_sqlite_pragma(dbapi_connection, connection_record)
