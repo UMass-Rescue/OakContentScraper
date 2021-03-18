@@ -1,20 +1,21 @@
 from content_scraper.scrapers.twitter import TwitterScrape
 import os
-from abc import ABC, abstractmethod
 
-
-class Scrape(ABC):
-    @abstractmethod
-    def collect_batch(self):
-        pass
-
-    @abstractmethod
-    def batch_monitor(self):
-        pass
-
-    @abstractmethod
-    def continuous_monitor(self):
-        pass
+# from abc import ABC, abstractmethod
+#
+#
+# class Scrape(ABC):
+#     @abstractmethod
+#     def collect_batch(self):
+#         pass
+#
+#     @abstractmethod
+#     def batch_monitor(self):
+#         pass
+#
+#     @abstractmethod
+#     def continuous_monitor(self):
+#         pass
 
 
 def get_scraper(platform_string):

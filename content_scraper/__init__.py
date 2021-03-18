@@ -3,6 +3,7 @@ import sys
 
 
 def setup_logging():
+    logger.remove()
     logger.add(
         sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO"
     )

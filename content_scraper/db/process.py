@@ -13,7 +13,7 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
     """
     platform = models.Platform(name=scrape_result.platform)
     session.add(platform)
-    session.commit()
-    logger.info(platform)
+    session.flush()
+    logger.info(platform.id)
 
     return True
