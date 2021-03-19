@@ -1,8 +1,7 @@
-# from content_scraper.scrapers import get_all_keywords
+from content_scraper.scrapers.utils import Scrape, get_all_keywords
 from content_scraper.db.standards import ScrapeResult, TextContent
 from content_scraper.db.strings import WrittenContentCategory
 from datetime import datetime
-import os
 
 # import twint
 #
@@ -14,26 +13,7 @@ import os
 # twint.run.Search(c)
 
 
-def get_all_keywords():
-    keyword_dir = os.path.join(
-        os.path.dirname(__file__), "..", "..", "resources", "keywords"
-    )
-    keywords = list()
-    for file in os.listdir(keyword_dir):
-        if file.split(".")[-1] == "txt":
-            keywords.extend(get_keywords_from_file(keyword_dir, file))
-    return keywords
-
-
-def get_keywords_from_file(directory, filename):
-    keywords = list()
-    with open(os.path.join(directory, filename), "r") as datafile:
-        for line in datafile:
-            keywords.extend(line)
-    return keywords
-
-
-class TwitterScrape:
+class TwitterScrape(Scrape):
     def __init__(self):
         pass
 

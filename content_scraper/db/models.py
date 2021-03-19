@@ -39,6 +39,7 @@ class AppTarget(TimestampMixin, Base):
     id = Column(String, primary_key=True, default=str(uuid4()))
     name = Column(String)
     bundle_id = Column(String)
+    bundle_id_alt = Column(String)
     __table_args__ = (UniqueConstraint("name", sqlite_on_conflict="IGNORE"),)
 
 
