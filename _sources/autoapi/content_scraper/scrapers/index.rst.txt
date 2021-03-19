@@ -11,6 +11,7 @@ Submodules
    :maxdepth: 1
 
    twitter/index.rst
+   utils/index.rst
 
 
 Package Contents
@@ -31,12 +32,12 @@ Functions
 .. autoapisummary::
 
    content_scraper.scrapers.get_scraper
-   content_scraper.scrapers.get_all_keywords
-   content_scraper.scrapers.get_keywords_from_file
 
 
 .. class:: TwitterScrape
 
+
+   Bases: :class:`content_scraper.scrapers.utils.Scrape`
 
    .. method:: collect_batch(self, keywords=get_all_keywords())
 
@@ -49,11 +50,5 @@ Functions
 
 
 .. function:: get_scraper(platform_string)
-
-
-.. function:: get_all_keywords()
-
-
-.. function:: get_keywords_from_file(directory, filename)
 
 

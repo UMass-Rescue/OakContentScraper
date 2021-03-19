@@ -108,6 +108,11 @@ Classes
 
       
 
+   .. attribute:: bundle_id_alt
+      
+
+      
+
    .. attribute:: __table_args__
       
 
