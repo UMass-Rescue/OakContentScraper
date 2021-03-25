@@ -1,5 +1,6 @@
 import content_scraper.db as db
 import content_scraper.db.models as models
+import json
 
 # from loguru import logger
 
@@ -65,8 +66,8 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
             publication_date=text_content.publication_date,
             publically_available=text_content.publically_available,
             native_id=text_content.native_id,
-            keywords=text_content.keywords,
-            miscellanous=text_content.miscellanous,
+            keywords=json.dumps(text_content.keywords),
+            miscellanous=json.dumps(text_content.miscellanous),
         )
         session.add(TextMetadata)
     session.commit()
