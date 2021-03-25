@@ -178,8 +178,26 @@
 inheritance.</p>
 <dl class="py method">
 <dt id="content_scraper.scrapers.twitter.TwitterScrape.collect_batch">
-<code class="sig-name descname"><span class="pre">collect_batch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.twitter.TwitterScrape.collect_batch" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname"><span class="pre">collect_batch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">since</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">until</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#content_scraper.scrapers.twitter.TwitterScrape.collect_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects a batch of tweets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keywords</strong> (<em>list</em>) – keywords to search for</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – Limit tweets per keyword</p></li>
+<li><p><strong>app_target</strong> (<em>str</em>) – app target</p></li>
+<li><p><strong>since</strong> (<em>str</em>) – date string since</p></li>
+<li><p><strong>until</strong> (<em>str</em>) – date string until</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ScrapeResult object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../db/standards/#content_scraper.db.standards.ScrapeResult" title="content_scraper.db.standards.ScrapeResult">ScrapeResult</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="content_scraper.scrapers.twitter.TwitterScrape.batch_monitor">

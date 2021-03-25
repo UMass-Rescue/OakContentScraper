@@ -19,6 +19,8 @@ Functions
 
 .. function:: persist_app_target(app_metadata, session=db.get_session())
 
+   Persist an app with metadata
+
 
 .. function:: persist_scrape_result(scrape_result, session=db.get_session())
 

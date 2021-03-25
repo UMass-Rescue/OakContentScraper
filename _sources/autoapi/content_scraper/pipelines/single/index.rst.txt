@@ -16,6 +16,8 @@ Functions
    content_scraper.pipelines.single.batch_collect_single_platform
 
 
-.. function:: batch_collect_single_platform(platform, keywords=get_all_keywords(), limit=10, app_target=None)
+.. function:: batch_collect_single_platform(platform, keywords=get_all_keywords(), limit=10, app_target=None, since=None, until=None)
+
+   Perform a batch collect
 
 

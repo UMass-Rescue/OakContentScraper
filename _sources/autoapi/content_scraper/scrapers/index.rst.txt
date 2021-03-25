@@ -42,7 +42,17 @@ Functions
    Helper class that provides a standard way to create an ABC using
    inheritance.
 
-   .. method:: collect_batch(self, keywords, limit, app_target)
+   .. method:: collect_batch(self, keywords, limit, app_target, since, until)
+
+      Collects a batch of tweets
+
+      :param list keywords: keywords to search for
+      :param int limit: Limit tweets per keyword
+      :param str app_target: app target
+      :param str since: date string since
+      :param str until: date string until
+      :return: ScrapeResult object
+      :rtype: ScrapeResult
 
 
    .. method:: batch_monitor(self, keywords)
@@ -53,5 +63,7 @@ Functions
 
 
 .. function:: get_scraper(platform_string)
+
+   Delegate Scraper class
 
 

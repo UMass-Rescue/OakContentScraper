@@ -38,4 +38,6 @@ Functions
 
 .. function:: setup_logging()
 
+   Set up loguru instance
+
 

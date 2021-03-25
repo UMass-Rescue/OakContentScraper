@@ -34,6 +34,8 @@ Functions
    .. method:: collect_batch(self)
       :abstractmethod:
 
+      Collect batch of text contents
+
 
    .. method:: batch_monitor(self)
       :abstractmethod:
@@ -45,5 +47,11 @@ Functions
 
 
 .. function:: vdir(obj)
+
+   Short summary.
+
+   :param any obj: Any object
+   :return: List of object attributes
+   :rtype: list
 
 
