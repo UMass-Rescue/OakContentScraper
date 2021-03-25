@@ -12,3 +12,9 @@ Used for pulling content samples from different sources
 pip install -e .
 pytest
 ```
+
+## Usage
+
+```bash
+python content_scraper/content_scraper_cli.py twitter
+```
