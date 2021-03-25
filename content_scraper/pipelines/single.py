@@ -5,10 +5,12 @@ from loguru import logger
 from content_scraper.pipelines import get_all_keywords
 
 
-def batch_collect_single_platform(platform, keywords=get_all_keywords(), limit=10):
+def batch_collect_single_platform(
+    platform, keywords=get_all_keywords(), limit=10, app_target=None
+):
 
     scraper = get_scraper(platform)
-    ScrapeResult = scraper.collect_batch(keywords, limit)
+    ScrapeResult = scraper.collect_batch(keywords, limit, app_target)
     session = get_session()
     try:
         persist_scrape_result(ScrapeResult, session)

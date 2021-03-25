@@ -11,14 +11,19 @@ class TwitterScrape(Scrape):
     def __init__(self):
         pass
 
-    def collect_batch(self, keywords, limit):
+    def collect_batch(self, keywords, limit, app_target):
         c = twint.Config()
 
         contents = list()
+
         for keyword in tqdm(keywords):
             logger.info(f"Searching for... {keyword}")
             c = twint.Config()
-            c.Search = keyword
+            if app_target:
+                search = f'"{keyword}" "{app_target}"'
+            else:
+                search = f'"{keyword}"'
+            c.Search = search
             c.Limit = limit
             c.Store_object = True
             c.Hide_output = True
@@ -53,6 +58,7 @@ class TwitterScrape(Scrape):
             source_platform="twitter",
             contents=contents,
             content_type=WrittenContentCategory.tweet,
+            app_target=app_target,
         )
         return result
 
