@@ -6,3 +6,7 @@ pydantic
 typing
 loguru
 tqdm
+tweet-preprocessor
+pandas
+matplotlib
+sentence_transformers

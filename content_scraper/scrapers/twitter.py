@@ -40,6 +40,7 @@ class TwitterScrape(Scrape):
 
             c.Search = search
             c.Limit = limit
+            c.Lang = "en"
             c.Store_object = True
             c.Hide_output = True
             if since:
