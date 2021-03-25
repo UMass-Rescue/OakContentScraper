@@ -111,6 +111,7 @@ class TextMetadata(TimestampMixin, Base):
         primary_key=True,
         default=str(uuid4()),
     )
+    native_id = Column(String)
     content_type = Column(Enum(WrittenContentCategory))
     author = Column(
         String, ForeignKey("text_authors.id", ondelete="CASCADE"), index=True
@@ -118,7 +119,7 @@ class TextMetadata(TimestampMixin, Base):
     source_platform = Column(
         String, ForeignKey("source_platforms.id", ondelete="CASCADE"), index=True
     )
-    converation_native_id = Column(String)
+    conversation_native_id = Column(String)
     publication_date = Column(DateTime)
     publically_available = Column(Boolean)
     keywords = Column(String)

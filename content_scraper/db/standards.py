@@ -9,9 +9,11 @@ class AppMetadata(BaseModel):
     publisher: str
     esrb_rating: str
     publication_date: datetime
+    bundle_id: str
 
 
 class TextContent(BaseModel):
+    native_id: Optional[str] = None
     content: str
     author_username: str
     conversation_native_id: str
