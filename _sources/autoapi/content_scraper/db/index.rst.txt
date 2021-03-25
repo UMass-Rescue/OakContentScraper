@@ -35,7 +35,6 @@ Functions
    content_scraper.db.drop_all
    content_scraper.db.delete_db
    content_scraper.db.wipe
-   content_scraper.db.set_sqlite_pragma
 
 
 .. data:: Base
@@ -100,10 +99,5 @@ Functions
 .. function:: wipe()
 
    Drop all tables and delete file
-
-
-.. function:: set_sqlite_pragma(dbapi_connection, connection_record)
-
-   Ensures foreign key
 
 

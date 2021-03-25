@@ -42,13 +42,13 @@ Functions
    Helper class that provides a standard way to create an ABC using
    inheritance.
 
-   .. method:: collect_batch(self, keywords=get_all_keywords())
+   .. method:: collect_batch(self, keywords, limit, app_target)
 
 
-   .. method:: batch_monitor(self, keywords=get_all_keywords())
+   .. method:: batch_monitor(self, keywords)
 
 
-   .. method:: continuous_monitor(self, keywords=get_all_keywords())
+   .. method:: continuous_monitor(self, keywords)
 
 
 

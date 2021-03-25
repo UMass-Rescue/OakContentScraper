@@ -21,8 +21,7 @@ Functions
 
 .. autoapisummary::
 
-   content_scraper.scrapers.utils.get_all_keywords
-   content_scraper.scrapers.utils.get_keywords_from_file
+   content_scraper.scrapers.utils.vdir
 
 
 .. class:: Scrape
@@ -45,9 +44,6 @@ Functions
 
 
 
-.. function:: get_all_keywords()
-
-
-.. function:: get_keywords_from_file(directory, filename)
+.. function:: vdir(obj)
 
 

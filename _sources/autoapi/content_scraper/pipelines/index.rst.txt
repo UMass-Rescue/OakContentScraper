@@ -15,3 +15,22 @@ Submodules
    single/index.rst
 
 
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   content_scraper.pipelines.get_all_keywords
+   content_scraper.pipelines.get_keywords_from_file
+
+
+.. function:: get_all_keywords()
+
+
+.. function:: get_keywords_from_file(directory, filename)
+
+
