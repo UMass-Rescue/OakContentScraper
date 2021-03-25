@@ -1,7 +1,8 @@
 import content_scraper.db as db
 import content_scraper.db.models as models
 import json
-from loguru import logger
+
+# from loguru import logger
 
 
 def persist_app_target(app_metadata, session=db.get_session()):
@@ -30,9 +31,15 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
     :return: True if success
     :rtype: boolean
     """
-    source_platform = models.SourcePlatform(name=scrape_result.source_platform)
-    session.add(source_platform)
-    session.commit()
+    source_platform = (
+        session.query(models.SourcePlatform)
+        .filter(models.SourcePlatform.name == scrape_result.source_platform)
+        .first()
+    )
+    if source_platform is None:
+        source_platform = models.SourcePlatform(name=scrape_result.source_platform)
+        session.add(source_platform)
+        session.flush()
 
     if scrape_result.app_target:
         app_target = (
@@ -51,9 +58,9 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
             )
             session.add(ATA)
 
-        logger.info(TextContent)
-
+        ta_id = models.generate_uuid()
         TextAuthor = models.TextAuthor(
+            id=ta_id,
             username=text_content.author_username,
             source_platform=source_platform.id,
         )
@@ -63,7 +70,7 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
         TextMetadata = models.TextMetadata(
             id=TextContent.id,
             content_type=scrape_result.content_type,
-            author=TextAuthor.id,
+            author=ta_id,
             source_platform=source_platform.id,
             conversation_native_id=text_content.conversation_native_id,
             publication_date=text_content.publication_date,
@@ -73,6 +80,7 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
             miscellanous=json.dumps(text_content.miscellanous),
         )
         session.add(TextMetadata)
+
     session.commit()
 
     return True

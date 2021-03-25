@@ -12,4 +12,4 @@ def setup_logging():
         colorize=True,
         format="<green>{time}</green> <level>{message}</level>",
     )
-    logger.add("content_scraper_{time}.log")
+    # logger.add("content_scraper_{time}.log")

@@ -85,9 +85,7 @@ class TextAuthor(TimestampMixin, Base):
         String, ForeignKey("source_platforms.id", ondelete="CASCADE")
     )
 
-    __table_args__ = (
-        UniqueConstraint("username", "source_platform", sqlite_on_conflict="IGNORE"),
-    )
+    __table_args__ = (UniqueConstraint("id", sqlite_on_conflict="IGNORE"),)
 
 
 class TextContent(TimestampMixin, Base):
