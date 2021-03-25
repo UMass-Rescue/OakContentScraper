@@ -3,9 +3,6 @@ This module instantiates the models in the models.py file
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.engine import Engine
-from sqlalchemy import event
-import sqlite3
 import os
 from content_scraper.db import models
 

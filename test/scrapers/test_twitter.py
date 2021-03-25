@@ -6,9 +6,6 @@ import content_scraper.db.models as models
 def test_record_exists():
 
     single.batch_collect_single_platform("twitter", keywords=["cp"], limit=5)
-    import pytest
-
-    pytest.set_trace()
     session = db.get_session()
     assert len(session.query(models.SourcePlatform).all()) == 1
     assert len(session.query(models.TextContent).all()) == 5
