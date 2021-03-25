@@ -10,3 +10,4 @@ tweet-preprocessor
 pandas
 matplotlib
 sentence_transformers
+transformers
