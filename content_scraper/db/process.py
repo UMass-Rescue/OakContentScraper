@@ -1,8 +1,7 @@
 import content_scraper.db as db
 import content_scraper.db.models as models
 import json
-
-# from loguru import logger
+from loguru import logger
 
 
 def persist_app_target(app_metadata, session=db.get_session()):
@@ -33,7 +32,7 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
     """
     source_platform = models.SourcePlatform(name=scrape_result.source_platform)
     session.add(source_platform)
-    session.flush()
+    session.commit()
 
     if scrape_result.app_target:
         app_target = (
@@ -52,11 +51,15 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
             )
             session.add(ATA)
 
+        logger.info(TextContent)
+
         TextAuthor = models.TextAuthor(
-            username=text_content.author_username, source_platform=source_platform.id
+            username=text_content.author_username,
+            source_platform=source_platform.id,
         )
         session.add(TextAuthor)
         session.flush()
+
         TextMetadata = models.TextMetadata(
             id=TextContent.id,
             content_type=scrape_result.content_type,

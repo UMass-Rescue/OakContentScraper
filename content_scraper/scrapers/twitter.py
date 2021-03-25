@@ -1,42 +1,63 @@
-from content_scraper.scrapers.utils import Scrape, get_all_keywords
+from content_scraper.scrapers.utils import Scrape, vdir
 from content_scraper.db.standards import ScrapeResult, TextContent
 from content_scraper.db.strings import WrittenContentCategory
 from datetime import datetime
-
-# import twint
-#
-# # Configure
-# c = twint.Config()
-# c.Search = "fruit"
-#
-# # Run
-# twint.run.Search(c)
+from loguru import logger
+import twint
+from tqdm import tqdm
 
 
 class TwitterScrape(Scrape):
     def __init__(self):
         pass
 
-    def collect_batch(self, keywords=get_all_keywords()):
-        sample_text = TextContent(
-            content="hi",
-            author_username="hi",
-            conversation_native_id="test",
-            publication_date=datetime.now(),
-            publically_available=True,
-            keywords=["Hi"],
-            miscellanous="hi",
-        )
+    def collect_batch(self, keywords, limit):
+        c = twint.Config()
+
+        contents = list()
+        for keyword in tqdm(keywords):
+            logger.info(f"Searching for... {keyword}")
+            c = twint.Config()
+            c.Search = keyword
+            c.Limit = limit
+            c.Store_object = True
+            c.Hide_output = True
+            tweets = twint.output.tweets_list
+            twint.run.Search(c)
+
+            for tweet in tweets[:limit]:
+                kws = list()
+                for keyword in keywords:
+                    if keyword in tweet.tweet:
+                        kws.append(keyword)
+                publication_date = datetime.strptime(
+                    f"{tweet.datestamp} {tweet.timestamp}", "%Y-%m-%d %H:%M:%S"
+                )
+                misc = dict()
+                for attr in vdir(tweet):
+                    misc[attr] = getattr(tweet, attr)
+                contents.append(
+                    TextContent(
+                        native_id=tweet.id,
+                        content=tweet.tweet,
+                        author_username=tweet.username,
+                        conversation_native_id=tweet.conversation_id,
+                        publication_date=publication_date,
+                        publically_available=True,
+                        keywords=kws,
+                        miscellanous=str(misc),
+                    )
+                )
 
         result = ScrapeResult(
             source_platform="twitter",
-            contents=[sample_text],
+            contents=contents,
             content_type=WrittenContentCategory.tweet,
         )
         return result
 
-    def batch_monitor(self, keywords=get_all_keywords()):
+    def batch_monitor(self, keywords):
         pass
 
-    def continuous_monitor(self, keywords=get_all_keywords()):
+    def continuous_monitor(self, keywords):
         pass

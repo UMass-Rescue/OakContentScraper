@@ -6,10 +6,14 @@ from sqlalchemy.types import DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
 from content_scraper.db.strings import WrittenContentCategory
-from uuid import uuid4
+import uuid
 
 
 Base = declarative_base()
+
+
+def generate_uuid():
+    return str(uuid.uuid4())
 
 
 class TimestampMixin(object):
@@ -36,7 +40,7 @@ class AppMetadata(TimestampMixin, Base):
 class AppTarget(TimestampMixin, Base):
     __tablename__ = "app_targets"
 
-    id = Column(String, primary_key=True, default=str(uuid4()))
+    id = Column(String, primary_key=True, default=generate_uuid)
     name = Column(String)
     bundle_id = Column(String)
     bundle_id_alt = Column(String)
@@ -46,7 +50,7 @@ class AppTarget(TimestampMixin, Base):
 class AppTextAssociation(TimestampMixin, Base):
     __tablename__ = "app_text_associations"
 
-    id = Column(String, primary_key=True, default=str(uuid4()))
+    id = Column(String, primary_key=True, default=generate_uuid)
     text_id = Column(
         String, ForeignKey("text_contents.id", ondelete="CASCADE"), index=True
     )
@@ -63,7 +67,7 @@ class SourcePlatform(TimestampMixin, Base):
 
     __tablename__ = "source_platforms"
 
-    id = Column(String, primary_key=True, default=str(uuid4()))
+    id = Column(String, primary_key=True, default=generate_uuid)
     name = Column(String)
     __table_args__ = (UniqueConstraint("name", sqlite_on_conflict="IGNORE"),)
 
@@ -75,7 +79,7 @@ class TextAuthor(TimestampMixin, Base):
 
     __tablename__ = "text_authors"
 
-    id = Column(String, primary_key=True, default=str(uuid4()))
+    id = Column(String, primary_key=True, default=generate_uuid)
     username = Column(String)
     source_platform = Column(
         String, ForeignKey("source_platforms.id", ondelete="CASCADE")
@@ -93,7 +97,7 @@ class TextContent(TimestampMixin, Base):
 
     __tablename__ = "text_contents"
 
-    id = Column(String, primary_key=True, default=str(uuid4()))
+    id = Column(String, primary_key=True, default=generate_uuid)
     content = Column(String)
     __table_args__ = (UniqueConstraint("id", sqlite_on_conflict="IGNORE"),)
 
@@ -109,7 +113,7 @@ class TextMetadata(TimestampMixin, Base):
         String,
         ForeignKey("text_contents.id", ondelete="CASCADE"),
         primary_key=True,
-        default=str(uuid4()),
+        default=generate_uuid,
     )
     native_id = Column(String)
     content_type = Column(Enum(WrittenContentCategory))

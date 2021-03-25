@@ -69,12 +69,3 @@ def wipe():
     """Drop all tables and delete file"""
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
-
-
-@event.listens_for(Engine, "connect")
-def set_sqlite_pragma(dbapi_connection, connection_record):
-    """Ensures foreign key"""
-    if isinstance(dbapi_connection, sqlite3.Connection):
-        cursor = dbapi_connection.cursor()
-        cursor.execute("PRAGMA foreign_keys=ON")
-        cursor.close()
