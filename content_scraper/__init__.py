@@ -3,6 +3,7 @@ import sys
 
 
 def setup_logging():
+    """Set up loguru instance"""
     logger.remove()
     logger.add(
         sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO"

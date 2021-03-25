@@ -11,7 +11,18 @@ class TwitterScrape(Scrape):
     def __init__(self):
         pass
 
-    def collect_batch(self, keywords, limit, app_target):
+    def collect_batch(self, keywords, limit, app_target, since, until):
+        """Collects a batch of tweets
+
+        :param list keywords: keywords to search for
+        :param int limit: Limit tweets per keyword
+        :param str app_target: app target
+        :param str since: date string since
+        :param str until: date string until
+        :return: ScrapeResult object
+        :rtype: ScrapeResult
+
+        """
         c = twint.Config()
 
         contents = list()
@@ -31,6 +42,11 @@ class TwitterScrape(Scrape):
             c.Limit = limit
             c.Store_object = True
             c.Hide_output = True
+            if since:
+                c.Since = since  # '2016-12-06'
+            if until:
+                c.Until = until  # '2016-12-07'
+
             tweets = twint.output.tweets_list
             twint.run.Search(c)
 
@@ -42,7 +58,7 @@ class TwitterScrape(Scrape):
                     else:
                         kw_list = words.split(" ")
                     for word in kw_list:
-                        if word in tweet.tweet:
+                        if word in tweet.tweet.lower():
                             kws.append(word)
                 publication_date = datetime.strptime(
                     f"{tweet.datestamp} {tweet.timestamp}", "%Y-%m-%d %H:%M:%S"

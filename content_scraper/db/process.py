@@ -6,6 +6,7 @@ import json
 
 
 def persist_app_target(app_metadata, session=db.get_session()):
+    """Persist an app with metadata"""
     target = models.AppTarget(name=app_metadata.name, bundle_id=app_metadata.bundle_id)
     session.add(target)
     session.flush()

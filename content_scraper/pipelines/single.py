@@ -6,11 +6,17 @@ from content_scraper.pipelines import get_all_keywords
 
 
 def batch_collect_single_platform(
-    platform, keywords=get_all_keywords(), limit=10, app_target=None
+    platform,
+    keywords=get_all_keywords(),
+    limit=10,
+    app_target=None,
+    since=None,
+    until=None,
 ):
+    """Perform a batch collect"""
 
     scraper = get_scraper(platform)
-    ScrapeResult = scraper.collect_batch(keywords, limit, app_target)
+    ScrapeResult = scraper.collect_batch(keywords, limit, app_target, since, until)
     session = get_session()
     try:
         persist_scrape_result(ScrapeResult, session)
