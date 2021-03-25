@@ -21,6 +21,9 @@ Classes
 
    Bases: :class:`content_scraper.scrapers.utils.Scrape`
 
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
    .. method:: collect_batch(self, keywords=get_all_keywords())
 
 

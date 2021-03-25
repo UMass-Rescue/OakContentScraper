@@ -253,6 +253,11 @@ Classes
 
       
 
+   .. attribute:: native_id
+      
+
+      
+
    .. attribute:: content_type
       
 
@@ -268,7 +273,7 @@ Classes
 
       
 
-   .. attribute:: converation_native_id
+   .. attribute:: conversation_native_id
       
 
       

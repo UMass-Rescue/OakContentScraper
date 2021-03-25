@@ -13,7 +13,11 @@ Functions
 
 .. autoapisummary::
 
+   content_scraper.db.process.persist_app_target
    content_scraper.db.process.persist_scrape_result
+
+
+.. function:: persist_app_target(app_metadata, session=db.get_session())
 
 
 .. function:: persist_scrape_result(scrape_result, session=db.get_session())

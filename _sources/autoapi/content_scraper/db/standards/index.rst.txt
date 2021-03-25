@@ -42,10 +42,20 @@ Classes
 
       
 
+   .. attribute:: bundle_id
+      :annotation: :str
+
+      
+
 
 .. class:: TextContent
 
    Bases: :class:`pydantic.BaseModel`
+
+   .. attribute:: native_id
+      :annotation: :Optional[str]
+
+      
 
    .. attribute:: content
       :annotation: :str
