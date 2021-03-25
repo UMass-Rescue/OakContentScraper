@@ -4,10 +4,21 @@ import content_scraper.db.models as models
 
 
 def test_record_exists():
+    limit = 5
+    single.batch_collect_single_platform("twitter", keywords=["cp"], limit=limit)
 
-    single.batch_collect_single_platform("twitter", keywords=["cp"], limit=5)
     session = db.get_session()
     assert len(session.query(models.SourcePlatform).all()) == 1
-    assert len(session.query(models.TextContent).all()) == 5
-    assert len(session.query(models.TextAuthor).all()) == 5
-    assert len(session.query(models.TextMetadata).all()) == 5
+    assert len(session.query(models.TextContent).all()) == limit
+    assert len(session.query(models.TextAuthor).all()) == limit
+    assert len(session.query(models.TextMetadata).all()) == limit
+
+
+def test_over_limit():
+    limit = 110
+    single.batch_collect_single_platform("twitter", keywords=["cp"], limit=limit)
+    session = db.get_session()
+    assert len(session.query(models.SourcePlatform).all()) == 1
+    assert len(session.query(models.TextContent).all()) == limit
+    assert len(session.query(models.TextAuthor).all()) == limit
+    assert len(session.query(models.TextMetadata).all()) == limit

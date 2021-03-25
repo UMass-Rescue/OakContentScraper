@@ -81,6 +81,6 @@ def persist_scrape_result(scrape_result, session=db.get_session()):
         )
         session.add(TextMetadata)
 
-    session.commit()
+        session.commit()
 
     return True
