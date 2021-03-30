@@ -91,7 +91,7 @@ def print_centroids(df, centroids, text_column="text"):
         )
 
 
-def get_df_for_label(df, label_number, label_column='label'):
+def get_df_for_label(df, label_number, label_column="label"):
     return df[df[label_column] == label_number]
 
 
