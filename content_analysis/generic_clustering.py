@@ -84,11 +84,15 @@ def cluster(
     return df, centroids
 
 
-def print_centroids(centroids):
+def print_centroids(df, centroids, text_column="text"):
     for index, centroid in enumerate(centroids):
         print(
-            f"Index: {index} Centroid label: {find_closest_word_from_vec(df,centroid)}"
+            f"Index: {index} Centroid label: {find_closest_word_from_vec(df,centroid, text_column=text_column)}"
         )
+
+
+def get_df_for_label(df, label_number, label_column='label'):
+    return df[df[label_column] == label_number]
 
 
 if __name__ == "__main__":
@@ -102,4 +106,4 @@ if __name__ == "__main__":
 
     df, centroids = cluster(df, n_clusters=4)
 
-    print_centroids(centroids)
+    print_centroids(df, centroids)
