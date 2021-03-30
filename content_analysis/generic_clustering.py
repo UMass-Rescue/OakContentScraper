@@ -17,7 +17,7 @@ def cos_distance(a, b):
     return a_dot_b / mag_a_mag_b
 
 
-def find_closest_word_from_vec(df, vec, vector_column='text_vecs', text_column='text'):
+def find_closest_word_from_vec(df, vec, vector_column="text_vecs", text_column="text"):
     cur_max = cos_distance(df[vector_column][0], vec)
     cur_word = df[text_column][0]
 
@@ -86,7 +86,9 @@ def cluster(
 
 def print_centroids(centroids):
     for index, centroid in enumerate(centroids):
-        print(f"Index: {index} Centroid label: {find_closest_word_from_vec(df,centroid)}")
+        print(
+            f"Index: {index} Centroid label: {find_closest_word_from_vec(df,centroid)}"
+        )
 
 
 if __name__ == "__main__":
